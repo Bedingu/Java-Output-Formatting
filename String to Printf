@@ -1,0 +1,44 @@
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+ 
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        List<Elemento> list = new ArrayList<>();
+
+        System.out.println("================================");
+
+        for(int i=0;i<3;i++){
+            String s1=sc.next();
+            int x=sc.nextInt();
+            list.add(new Elemento(s1,lenght(x)));
+        }
+
+        list.forEach( item -> System.out.println(item.langage +" "+ item.value) );
+        System.out.println("================================");
+
+    }
+
+    private static String lenght(int b) {
+
+        DecimalFormat df = new DecimalFormat("000");
+        return df.format(b);
+    }
+
+    protected static class Elemento{
+
+        protected String langage;
+        protected String value;
+
+        public Elemento(String s1, String x) {
+            this.langage =s1;
+            this.value = x;
+
+        }
+    }
+}
